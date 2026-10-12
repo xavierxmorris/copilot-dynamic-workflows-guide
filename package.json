@@ -1,0 +1,15 @@
+{
+  "name": "copilot-dynamic-workflows-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A hands-on guide to agent skills and dynamic workflows in GitHub Copilot.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo:offline": "node scripts/offline-demo.mjs",
+    "check": "node --check .github/extensions/delivery-readiness/extension.mjs && node --check .github/extensions/delivery-readiness/workflow.mjs && node --test"
+  }
+}

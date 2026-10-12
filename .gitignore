@@ -1,0 +1,7 @@
+node_modules/
+outputs/
+.copilot/
+.env
+.env.*
+*.log
+coverage/

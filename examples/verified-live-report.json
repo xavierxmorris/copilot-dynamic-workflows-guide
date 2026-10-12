@@ -1,0 +1,61 @@
+{
+  "workflow": "delivery-readiness",
+  "version": 1,
+  "runId": "6d3b7e05-6833-42f5-a27b-41bce268ad36",
+  "snapshotHash": "a714329a8a917ab16732305813de1740117794fbc073e447a2a952fdd68b3ebe",
+  "organization": "parallel",
+  "documentsAssessed": 2,
+  "blockingFindings": 4,
+  "assessment": "needs-work",
+  "verification": "Excerpt matching only; tests, completeness, and release approval are not verified.",
+  "assessments": [
+    {
+      "document": "release-plan",
+      "path": "fixtures/release-plan.md",
+      "findings": [
+        {
+          "severity": "blocking",
+          "message": "The Windows dry-run test result remains an explicit TODO, so acceptance evidence is incomplete.",
+          "startLine": 10,
+          "endLine": 10,
+          "quote": "- TODO: record the Windows dry-run test result before declaring readiness."
+        },
+        {
+          "severity": "blocking",
+          "message": "Idempotence and dry-run behavior are specified, but the document supplies no verification results demonstrating either requirement.",
+          "startLine": 8,
+          "endLine": 9,
+          "quote": "- Formatting is idempotent: running the formatter twice produces the same bytes.\n- Dry-run mode prints proposed changes without writing files."
+        },
+        {
+          "severity": "advisory",
+          "message": "The preservation requirement has no documented recovery procedure if file contents or command compatibility regress.",
+          "startLine": 5,
+          "endLine": 5,
+          "quote": "The release must preserve existing command names and file contents."
+        }
+      ]
+    },
+    {
+      "document": "runbook",
+      "path": "fixtures/runbook.md",
+      "findings": [
+        {
+          "severity": "blocking",
+          "message": "Verification is prescribed, but no test results, dry-run evidence, verified commit, or package version are recorded.",
+          "startLine": 4,
+          "endLine": 5,
+          "quote": "Run the formatter tests and inspect the dry-run output on a sample directory.\nRecord the exact commit and package version used for verification."
+        },
+        {
+          "severity": "blocking",
+          "message": "Recovery remains an explicit TODO: the known-good version and rollback steps are missing.",
+          "startLine": 12,
+          "endLine": 12,
+          "quote": "TODO: name the known-good version and write the rollback steps."
+        }
+      ]
+    }
+  ],
+  "nextAction": "Have the document owner resolve the gaps, then start a new run."
+}
